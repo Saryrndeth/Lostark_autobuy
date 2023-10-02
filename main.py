@@ -22,7 +22,6 @@ def buy(driver: webdriver.Chrome(), item: str, amount: int) -> None:
     up = driver.find_element(By.CSS_SELECTOR, 'button.button--up')
     for _ in range(amount - 1):
         up.click()
-    print('다움')
     driver.execute_script('arguments[0].click()', driver.find_element(By.XPATH, '//*[@id="agreed"]'))
     driver.find_element(By.CSS_SELECTOR, 'button.lui-modal__buy').click()
     time.sleep(0.8)
