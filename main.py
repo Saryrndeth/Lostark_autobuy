@@ -26,9 +26,9 @@ def buy(driver: webdriver.Chrome(), item: str, amount: int) -> None:
     driver.find_element(By.CSS_SELECTOR, 'button.lui-modal__buy').click()
     time.sleep(0.8)
     buttons = driver.find_elements(By.CSS_SELECTOR, 'button.button--password-num')
-    for i in range(6):
+    for i in SECOND_PASS:
         for button in buttons:
-            if button.text == SECOND_PASS[i]:
+            if button.text == i:
                 button.click()
                 break
     time.sleep(1)
